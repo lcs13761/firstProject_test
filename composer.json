@@ -1,0 +1,24 @@
+{
+    "description": "first project",
+    "minimum-stability":"stable",
+    "authors": [
+        {
+            "name": "Lucas S Santo",
+            "role":"Developer"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4":{
+            "config\\":"config/"
+        },
+        "files": [
+            "config/connect.php",
+            "config/repository.php",
+            "config/config.php",
+            "config/formt.php"
+        ]
+        }
+}
