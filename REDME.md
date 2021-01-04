@@ -4,7 +4,7 @@ need to connect to the database
 
 dbname
 
-id" = int, 
+id" = int primary key aut_inc, 
 "nome" = varchar
 "email" = varchar
 "telefone" = varchar
