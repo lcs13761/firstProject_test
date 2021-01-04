@@ -144,3 +144,4 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/vscode,macos,phpstorm
 
+config/config.php
