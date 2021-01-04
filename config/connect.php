@@ -21,13 +21,13 @@ public static function getInstance(): ?\PDO
 {
     if(empty(self::$intance)){
         try {
-            self::$intance = new \PDO(
-                "mysql:host=" . CONF_DB_HOST . ";dbname=" . CONF_DB_NAME,
-                CONF_DB_USER,
-                CONF_DB_PASSWORD,
-                self::OPTIONS
-            );
-            
+            self::$intance = new \PDO("mysql:host=" . CONF_DB_HOST, CONF_DB_USER,
+            CONF_DB_PASSWORD, self::OPTIONS);
+            self::$intance->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        
+            self::$intance->query("CREATE DATABASE IF NOT EXISTS ". CONF_DB_NAME);
+            self::$intance->query("use ". CONF_DB_NAME);
+
         }catch (\PDOException $exception){
             die("<h1>Erro ao conectar....<h1>" .$exception);
 
@@ -37,6 +37,7 @@ public static function getInstance(): ?\PDO
 }
 final private function __construct()
 {
+   
 }
 
 /**
